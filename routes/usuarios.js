@@ -7,7 +7,7 @@ const {check} = require('express-validator');
 
 const{validarCampos} = require('../middlewares/validar-campos');
 
-const {getUsuarios, crearUsuario} = require('../controllers/usuarios');
+const {getUsuarios, crearUsuario, actualizarUsuario, borrarUsuario} = require('../controllers/usuarios');
 
 const {validarJWT} = require('../middlewares/validar-jwt');
 
