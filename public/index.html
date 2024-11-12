@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Sign-in</title>
+</head>
+<body>
+    <h1>Hola Mundo</h1>
+
+    <div id ="buttonDiv"></div>
+    <script src="https://accounts.google.com/gsi/client" async></script>
+    <div id="g_id_onload"
+        data-client_id="805888502889-0va1m1tfik2e66hd7m087nummc4o5uvj.apps.googleusercontent.com"
+        data-login_uri="http://localhost:6001/login/google"
+        data-auto_prompt="false">  
+        <script>
+            (data-login_uri,{
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify({
+                id_token: credential.id_token
+            })
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+
+        </script>
+    </div>
+    <div class="g_id_signin"
+        data-type="standard"
+        data-size="large"
+        data-theme="outline"
+        data-text="sign_in_with"
+        data-shape="rectangular"
+        data-logo_alignment="left">
+    </div>
+</body>
+</html>
